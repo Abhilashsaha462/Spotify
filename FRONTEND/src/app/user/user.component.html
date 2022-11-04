@@ -1,0 +1,59 @@
+<!-- <div class="user" style="margin-right:650px; margin-left:100px; ">
+    <mat-card class="example-card">
+        <mat-card-title>Register</mat-card-title>
+        <mat-card-content class="card">
+            <form action="" [formGroup]="userData">
+                <input type="text" placeholder="Email" formControlName="email"><br><br>
+                <input type="text" placeholder="UserName" formControlName="userName"><br><br>
+                <input type="text" placeholder="PhoneNumber" formControlName="phoneNumber"><br><br>
+                <input type="text" placeholder="Password" formControlName="password"><br><br>
+                <button mat-raised-button style="color: pink" (click)="saveData()">Submit</button> &nbsp;&nbsp;
+            </form>
+        </mat-card-content>
+      </mat-card>
+</div> -->
+
+<h2>User Form</h2>
+<form [formGroup]="userData">
+Enter Email Address
+<input type="email" placeholder="Email" formControlName="email"><br><br>
+<div *ngIf="userData.controls['email'].hasError('required')"> Email is required </div><br>
+  <div *ngIf="userData.controls['email'].hasError('minlength')">
+    Email min length Required i.e 10
+  </div>
+  <div *ngIf="userData.controls['email'].hasError('maxlength')">
+    Email max length Required i.e 25
+</div>
+<br>
+Enter UserName
+<input type="userName" placeholder="UserName" formControlName="userName"><br><br>
+<div *ngIf="userData.controls['userName'].hasError('required')"> UserName is required </div><br>
+  <!-- <div *ngIf="userData.controls['userName'].hasError('minlength')">
+    Email min length Required i.e 10
+  </div>
+  <div *ngIf="userData.controls['userName'].hasError('maxlength')">
+    Email max length Required i.e 25
+</div> -->
+<br>
+Enter PhoneNumber
+<input type="phoneNumber" placeholder="PhoneNumber" formControlName="phoneNumber"><br><br>
+<div *ngIf="userData.controls['phoneNumber'].hasError('required')"> PhoneNumber is required </div><br>
+  <!-- <div *ngIf="userData.controls['phoneNumber'].hasError('minlength')">
+    Email min length Required i.e 10
+  </div> -->
+  <!-- <div *ngIf="userData.controls['phoneNumber'].hasError('maxlength')">
+    PhoneNumber max length Required i.e 10
+</div> -->
+<br>
+Enter Password
+<input type="password" placeholder="Password" formControlName="password"><br><br>
+<div *ngIf="userData.controls['password'].hasError('required')"> Password is required </div><br>
+<div *ngIf="userData.controls['password'].hasError('minlength')">
+    Password min length Required i.e 5
+  </div>
+  <div *ngIf="userData.controls['password'].hasError('maxlength')">
+    Password max length Required i.e 12
+  </div>
+  <br>
+<button (click)="saveData()" >Register</button> &nbsp;&nbsp;
+</form>

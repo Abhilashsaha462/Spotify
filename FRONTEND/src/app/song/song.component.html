@@ -1,0 +1,26 @@
+<div class="song" style="margin-right:650px; margin-left:100px; ">
+    <mat-card class="example-card">
+        <mat-card-title>Song</mat-card-title>
+        <mat-card-content class="card">
+            <form action="" [formGroup]="songData">
+                <input type="text" placeholder="SongId" formControlName="songId"><br><br>
+                <input type="text" placeholder="SongName" formControlName="songName"><br><br>
+                <input type="text" placeholder="Genre" formControlName="genre"><br><br>
+                <button mat-raised-button style="color: pink" (click)="getAllSong()">Submit</button> &nbsp;&nbsp;
+            </form>
+        </mat-card-content>
+      </mat-card>
+</div>
+
+<table border="3px">
+    <th>songId</th>
+    <th>songName</th>
+    <th>genre</th>
+    <th>Add to playList</th>
+    <tbody *ngFor="let x of song1">
+        
+        <td>
+        
+          {{ x.songId }}</td><td>{{ x.songName }}</td><td>{{ x.genre }}</td><td><mat-icon (click)="open(x)">playlist_add</mat-icon> </td>
+    </tbody>
+</table>

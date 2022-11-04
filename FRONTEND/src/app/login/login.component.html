@@ -1,0 +1,24 @@
+<h2>Login Form</h2>
+<form [formGroup]="Login">
+Enter Email Address
+<input type="email" placeholder="Email" formControlName="email"><br><br>
+<div *ngIf="Login.controls['email'].hasError('required')"> Email is required </div><br>
+  <div *ngIf="Login.controls['email'].hasError('minlength')">
+    Email min length Required i.e 10
+  </div>
+  <div *ngIf="Login.controls['email'].hasError('maxlength')">
+    Email max length Required i.e 25
+</div>
+<br>
+Enter Password
+<input type="password" placeholder="Password" formControlName="password"><br><br>
+<div *ngIf="Login.controls['password'].hasError('required')"> Password is required </div><br>
+<div *ngIf="Login.controls['password'].hasError('minlength')">
+    Password min length Required i.e 5
+  </div>
+  <div *ngIf="Login.controls['password'].hasError('maxlength')">
+    Password max length Required i.e 12
+  </div>
+  <br>
+<button (click)="submit()" >Login</button> &nbsp;&nbsp;
+</form>

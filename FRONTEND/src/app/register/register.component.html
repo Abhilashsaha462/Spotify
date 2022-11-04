@@ -1,0 +1,24 @@
+<h2>Registration Form</h2>
+<form [formGroup]="regForm">
+Enter Email Address
+<input type="email" formControlName="email"><br><br>
+<div *ngIf="regForm.controls['email'].hasError('required')"> Email is required </div><br>
+  <div *ngIf="regForm.controls['email'].hasError('minlength')">
+    Email min length Required i.e 10
+  </div>
+  <div *ngIf="regForm.controls['email'].hasError('maxlength')">
+    Email max length Required i.e 25
+</div>
+<br>
+Enter Password
+<input type="password" formControlName="password"><br><br>
+<div *ngIf="regForm.controls['password'].hasError('required')"> Password is required </div><br>
+<div *ngIf="regForm.controls['password'].hasError('minlength')">
+    Password min length Required i.e 5
+  </div>
+  <div *ngIf="regForm.controls['password'].hasError('maxlength')">
+    Password max length Required i.e 10
+  </div>
+  <br>
+<button (click)="submit()" >Register</button> &nbsp;&nbsp;
+</form>
